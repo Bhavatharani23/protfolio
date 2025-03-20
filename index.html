@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHAVATHARAN</title>
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #191f37;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+nav{
+    z-index: 4;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+}
+
+nav .nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-container .logo h1{
+    color: white;
+}
+
+.nav-container .links a{
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    transition: 0.2s linear;
+}
+
+.nav-container .links a:hover{
+    color: #ff521b;
+    text-shadow: 1px 1px #ff521b;
+}
+
+nav svg{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    fill: white;
+    cursor: pointer;
+    display: none;
+}
+
+nav .dropdown{
+    position: absolute;
+    top: 0;
+    background-color: #191f37;
+    width: 100%;
+    height: auto;
+    transform: translateY(-300px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.3s linear;
+}
+
+nav .dropdown a{
+    color: white;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    width: 100%;
+    transition: 0.2s linear;
+}
+
+.dropdown a:hover{
+    background-color:  black;
+    color: white;
+}
+
+/* Section Starts */
+
+section{
+    width: 100%;
+    height: 90vh;
+}
+
+section .content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.content .main-content{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+}
+
+.main-content h1{
+    font-size: clamp(2rem, 1rem + 5vw, 3rem);
+    color: white;
+}
+
+.main-content span{
+    font-size: clamp(2.5rem, 1rem + 5vw, 4rem);
+    color:#ff521b;
+    font-weight: 700;
+}
+
+.main-content p{
+    font-size: clamp(1rem, 1rem + 5vw, 1.2rem);
+    color: white;
+}
+
+.main-content .buttons{
+    width: 70%;
+    margin: 5%;
+    height: 5.5vh;
+}
+
+.buttons button{
+    cursor: pointer;
+    width: 190px;
+    height: 100%;
+    border-radius: 20px;
+    background-color: #ff521b;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: 0.2s linear;
+}
+
+.buttons button:hover{
+    box-shadow: 2px 2px 30px #ff521b;
+}
+
+.content .images{
+    width: 50%;
+    display: flex;
+    margin-top: 5px;
+    justify-content: center;
+}
+
+.images img{
+    margin-top: 40px;
+    width: 500px;
+    filter: drop-shadow(0 0 20px #ff321b);
+}
+
+@media (max-width:768px) {
+    .links{
+        display: none;
+    }
+    
+    nav svg{
+        display: block;
+    }
+
+    .nav-container .logo{
+        position: absolute;
+        left: 10px;
+        top: 15px;
+    }
+
+    .content{
+        display: flex;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+
+    .images img{
+        width: 120%;
+        margin-bottom: 10px;
+    }
+
+    .content .main-content {
+        max-width: 400px;
+        align-items: center;
+        width: 100%;
+    }
+
+    .main-content p{
+        text-align: center;
+    }
+}
+
+
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><h1>Portfolio</h1></div>
+            <div class="links">
+                <a href="">Home</a>
+            </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="hamburg" height="32" width="34" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+        <div class="dropdown">
+            <a href="">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" class="cancel" height="34" width="32" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+        </div>
+    </nav>
+    <section>
+        <div class="content">
+            <div class="main-content">
+                <h1 data-aos="fade-right" data-aos-duration="1500" >Hi! I Am</h1>
+                <span data-aos="fade-left" data-aos-duration="1500" data-aos-delay="200" >BHAVATHARAN</span>
+                <p data-aos="flip-up" data-aos-duration="1500"  data-aos-delay="400">Hello, I’m Bhavatharani, a passionate and ambitious second-year B.Sc. Computer Science student specializing in Artificial Intelligence. I have a keen interest in exploring cutting-edge technologies and leveraging AI to solve real-world problems. I am constantly learning and building my skills in programming, data analysis, and machine learning. I am a quick learner and enjoy taking on challenges that push me to grow both personally and professionally. My goal is to make a meaningful impact in the tech industry through innovation and dedication.</p>
+                <div class="buttons">
+                    <button data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="600">Download CV
+                    <img src="Bhavatharani CV.pdf" data-aos="zoom-out" data-aos-duration="1000" ></button>
+                </div>
+            </div>
+            <div class="images">
+                <img src="Bhavatharani.png" data-aos="zoom-out" data-aos-duration="2000" >
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({offset:1,});
+    </script>
+    <script>
+        const hamburg = document.querySelector('.hamburg')
+        const cancel = document.querySelector('.cancel')
+        const navbar = document.querySelector('.dropdown')
+
+        hamburg.addEventListener("click", ()=>{
+            navbar.style.transform = "translateY(0px)"
+            hamburg.style.display = "none"
+        })
+
+        cancel.addEventListener("click", ()=>{
+            navbar.style.transform = "translateY(-300px)"
+            hamburg.style.display = "block"
+        })
+    </script>
+</body>
+</html>
